@@ -21,7 +21,10 @@ class CoinFlip extends React.Component{
         //it is render's job to return a single DOM element!!
         //whether you like it or not, render will run right after the constructor;
         return(
-            <img src={this.state.image} />
+            <div className="coin-flip">
+                <button>Flip!</button>
+                <img src={this.state.image} />
+            </div>
         )
     }
 }
