@@ -17,12 +17,26 @@ class CoinFlip extends React.Component{
             image: this.coin[0]
         }
         }
-    render(){
+    // flip(){
+    //     console.log("Flip was clicked")
+    flip = ()=>{
+        console.log('Flip was clicked');
+        let coinSide = Math.round(Math.random()); //0, 1
+        //this is a setter
+        this.setState({
+            image: this.coin[coinSide],
+        })
+    }
+    render() {
         //it is render's job to return a single DOM element!!
         //whether you like it or not, render will run right after the constructor;
+
+        //React events are identical (mostly) to regular DOM events in 
+        //that they're attached to the element, except they must be in camelCase;
+        //We hand them code
         return(
             <div className="coin-flip">
-                <button>Flip!</button>
+                <button onClick={this.flip}>Flip!</button>
                 <img src={this.state.image} />
             </div>
         )
